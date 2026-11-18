@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Our School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #123c69, #1d5d96);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .intro {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .intro h2 {
+            color: #123c69;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #555;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #123c69;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #123c69;
+            padding-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: #f4f7fb;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #123c69;
+        }
+
+        .card h3 {
+            color: #123c69;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .values {
+            padding-left: 20px;
+        }
+
+        .values li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .highlight h2 {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: #123c69;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .button:hover {
+            background: #e8eef5;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            color: #123c69;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section,
+            .intro {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>🏫 Explore Our School</h1>
+        <p>Discover a place where learning, character and excellence grow together.</p>
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="intro">
+
+            <h2>Welcome to Our School</h2>
+
+            <p>
+                We are committed to providing a safe, supportive and stimulating
+                learning environment where every child is encouraged to discover
+                their potential, develop confidence and prepare for a successful future.
+            </p>
+
+        </section>
+
+
+        <!-- ABOUT THE SCHOOL -->
+
+        <section class="section">
+
+            <h2>📖 About Our School</h2>
+
+            <p>
+                Our school provides quality education designed to develop the
+                academic, social, moral and creative abilities of our students.
+                We combine effective teaching with discipline, practical learning
+                and character development.
+            </p>
+
+            <br>
+
+            <p>
+                Our goal is to raise responsible, confident and knowledgeable
+                young people who can make meaningful contributions to their
+                families, communities and the world.
+            </p>
+
+        </section>
+
+
+        <!-- ACADEMICS -->
+
+        <section class="section">
+
+            <h2>🎓 Academics</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>📚 Nursery Education</h3>
+                    <p>
+                        A strong foundation through engaging activities,
+                        early learning and character development.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📘 Primary Education</h3>
+                    <p>
+                        Building strong foundations in literacy, numeracy,
+                        science, creativity and social development.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📕 Secondary Education</h3>
+                    <p>
+                        Preparing students for higher education and future
+                        careers through quality academic instruction.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Digital Learning</h3>
+                    <p>
+                        Encouraging students to develop useful technology
+                        and digital skills for the modern world.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FACILITIES -->
+
+        <section class="section">
+
+            <h2>🏢 Our Facilities</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>🏫 Modern Classrooms</h3>
+                    <p>
+                        Comfortable learning spaces designed to support
+                        effective teaching and learning.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔬 Science Laboratory</h3>
+                    <p>
+                        Practical learning opportunities that help students
+                        understand science beyond textbooks.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Computer Laboratory</h3>
+                    <p>
+                        Providing students with opportunities to learn
+                        computer and digital skills.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>⚽ Sports & Recreation</h3>
+                    <p>
+                        Activities that promote physical fitness, teamwork
+                        and healthy competition.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCHOOL ACTIVITIES -->
+
+        <section class="section">
+
+            <h2>🎨 School Activities</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>⚽ Sports</h3>
+                    <p>
+                        Football, athletics and other physical activities.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎭 Arts & Culture</h3>
+                    <p>
+                        Drama, music, dance and creative activities that
+                        encourage self-expression.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🧠 Academic Competitions</h3>
+                    <p>
+                        Competitions and challenges that encourage students
+                        to develop their knowledge and skills.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌱 Clubs & Societies</h3>
+                    <p>
+                        Opportunities for students to explore their interests,
+                        talents and leadership abilities.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR VALUES -->
+
+        <section class="section">
+
+            <h2>❤️ Our Core Values</h2>
+
+            <ul class="values">
+
+                <li><strong>Integrity</strong> — Doing what is right and honest.</li>
+
+                <li><strong>Excellence</strong> — Striving to achieve our best.</li>
+
+                <li><strong>Discipline</strong> — Developing responsibility and self-control.</li>
+
+                <li><strong>Respect</strong> — Treating everyone with dignity.</li>
+
+                <li><strong>Hard Work</strong> — Understanding the value of commitment and effort.</li>
+
+                <li><strong>Leadership</strong> — Developing confident and responsible future leaders.</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- WHY CHOOSE US -->
+
+        <section class="section">
+
+            <h2>⭐ Why Choose Our School?</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>👨‍🏫 Dedicated Teachers</h3>
+                    <p>
+                        Our teachers are committed to helping students understand,
+                        improve and succeed.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🛡️ Safe Environment</h3>
+                    <p>
+                        We promote a caring and supportive environment where
+                        students can learn confidently.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌟 Character Development</h3>
+                    <p>
+                        We believe education should develop both the mind
+                        and the character.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Future Preparation</h3>
+                    <p>
+                        We equip students with knowledge, skills and values
+                        for their future.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="highlight">
+
+            <h2>🎓 Ready to Join Us?</h2>
+
+            <p>
+                Give your child the opportunity to learn, grow and succeed
+                in a supportive educational environment.
+            </p>
+
+            <a href="admission.html" class="button">
+                Apply for Admission
+            </a>
+
+        </section>
+
+
+        <!-- BACK -->
+
+        <a href="index(3).html" class="back">
+            ← Back to Home
+        </a>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Your School. All Rights Reserved.
+        </p>
+
+        <p>
+            Excellence • Discipline • Knowledge • Character
+        </p>
+
+    </footer>
+
+</body>
+</html>

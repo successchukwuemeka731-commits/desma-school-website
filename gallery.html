@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | DESMA SPRING WATER SCHOOL</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: #087f23;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .logo-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #087f23;
+        }
+
+        .logo-motto {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .desktop-menu {
+            display: flex;
+            gap: 22px;
+        }
+
+        .desktop-menu a {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .desktop-menu a:hover {
+            color: #087f23;
+        }
+
+        /* ================= PAGE HEADER ================= */
+
+        .page-header {
+            background: linear-gradient(
+                rgba(0, 90, 20, 0.88),
+                rgba(0, 90, 20, 0.88)
+            );
+            color: white;
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .page-header small {
+            color: #ffd700;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin: 10px 0 15px;
+        }
+
+        .page-header h1 span {
+            color: #ffd700;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* ================= INTRO ================= */
+
+        .gallery-intro {
+            padding: 70px 0 35px;
+            text-align: center;
+        }
+
+        .section-label {
+            color: #087f23;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .gallery-intro h2 {
+            font-size: 34px;
+            margin: 8px 0 15px;
+        }
+
+        .gallery-intro p {
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* ================= CATEGORY BUTTONS ================= */
+
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0 40px;
+        }
+
+        .gallery-nav span {
+            padding: 9px 17px;
+            border: 1px solid #087f23;
+            border-radius: 25px;
+            color: #087f23;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .gallery-nav span:first-child {
+            background: #087f23;
+            color: white;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery-section {
+            padding: 20px 0 80px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 260px;
+            background: #e9f3ea;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #087f23;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid #dce8dd;
+            transition: 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        /* ================= FEATURED PHOTO ================= */
+
+        .featured {
+            background: #f7faf7;
+            padding: 70px 0;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-image {
+            height: 350px;
+            background: #e9f3ea;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #087f23;
+            font-weight: bold;
+        }
+
+        .featured-text h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .featured-text p {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        /* ================= COMING SOON ================= */
+
+        .coming {
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .coming-box {
+            max-width: 800px;
+            margin: auto;
+            background: #087f23;
+            color: white;
+            padding: 45px 30px;
+            border-radius: 12px;
+        }
+
+        .coming-box h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .coming-box p {
+            color: #e5f2e7;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #073d13;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #d8e8da;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #222;
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #032d0c;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d8e8da;
+            font-size: 14px;
+        }
+
+        .footer-col a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #ffd700;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            color: #bcd0bf;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 850px) {
+
+            .desktop-menu {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo-name {
+                font-size: 11px;
+            }
+
+            .logo-motto {
+                font-size: 9px;
+            }
+
+            .logo-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 65px 0;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 230px;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .gallery-intro h2,
+            .coming-box h2,
+            .cta h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="index(3).html" class="logo">
+
+            <div class="logo-mark">
+                DSWS
+            </div>
+
+            <div>
+
+                <div class="logo-name">
+                    DESMA SPRING WATER SCHOOL
+                </div>
+
+                <span class="logo-motto">
+                    "To Make a Difference"
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="desktop-menu">
+
+            <a href="index(3).html">Home</a>
+            <a href="explore.html">About</a>
+            <a href="admission.html">Admissions</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact_admissions.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <small>
+            DESMA SPRING WATER SCHOOL
+        </small>
+
+        <h1>
+            School <span>Gallery</span>
+        </h1>
+
+        <p>
+            Take a look at moments, activities and experiences
+            from life at DESMA SPRING WATER SCHOOL.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="gallery-intro">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Memories
+        </div>
+
+        <h2>
+            Moments Worth Remembering
+        </h2>
+
+        <p>
+            This gallery will showcase the school environment,
+            students' activities, special events, learning moments
+            and other memorable occasions.
+        </p>
+
+
+        <div class="gallery-nav">
+
+            <span>All</span>
+            <span>School</span>
+            <span>Students</span>
+            <span>Activities</span>
+            <span>Events</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PHOTO GRID ================= -->
+
+<section class="gallery-section">
+
+    <div class="container">
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item">
+                SCHOOL BUILDING PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                CLASSROOM PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                STUDENTS PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                SCHOOL ACTIVITY PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                SCHOOL EVENT PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                TEACHERS PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                LEARNING PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                PLAYGROUND PHOTO
+            </div>
+
+
+            <div class="gallery-item">
+                SCHOOL ENVIRONMENT PHOTO
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURED ================= -->
+
+<section class="featured">
+
+    <div class="container">
+
+        <div class="featured-content">
+
+
+            <div class="featured-image">
+                FEATURED SCHOOL PHOTO
+            </div>
+
+
+            <div class="featured-text">
+
+                <div class="section-label">
+                    Featured Moment
+                </div>
+
+                <h2>
+                    Life at DESMA SPRING WATER SCHOOL
+                </h2>
+
+                <p>
+                    From classroom learning to school activities,
+                    every moment contributes to the experiences
+                    students have during their time at school.
+                </p>
+
+                <p>
+                    This section can later feature a special
+                    photograph or important school moment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMING SOON ================= -->
+
+<section class="coming">
+
+    <div class="container">
+
+        <div class="coming-box">
+
+            <h2>
+                More Photos Coming Soon
+            </h2>
+
+            <p>
+                Our gallery will be updated with more photographs
+                showing school activities, events, learning moments,
+                facilities and memorable experiences.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Want to Know More About Our School?
+        </h2>
+
+        <p>
+            Explore our admissions information or contact the school
+            for more information.
+        </p>
+
+        <a href="admission.html" class="btn btn-primary">
+            View Admissions
+        </a>
+
+        <a href="contact.html" class="btn btn-secondary">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-col">
+
+                <h3>
+                    DESMA SPRING WATER SCHOOL
+                </h3>
+
+                <p>
+                    "To Make a Difference"
+                </p>
+
+                <p style="margin-top:12px;">
+                    Providing an environment where students
+                    can learn, grow and develop.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index(3).html">Home</a>
+                <a href="explore.html">About</a>
+                <a href="admission.html">Admissions</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="news.html">News</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Ezeji str., Ogbose road,
+                    Obeama-asa, Oyigbo L.G.A,
+                    Rivers State, Nigeria
+                </p>
+
+                <p style="margin-top:10px;">
+                    +234 708 202 2634
+                </p>
+
+                <p style="margin-top:5px;">
+                    info@desmaspringwaterschool.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 DESMA SPRING WATER SCHOOL.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

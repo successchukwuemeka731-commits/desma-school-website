@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Facilities | DESMA SPRING WATER SCHOOL</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: #087f23;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 17px;
+        }
+
+        .logo-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #087f23;
+        }
+
+        .logo-motto {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .desktop-menu {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .desktop-menu a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .desktop-menu a:hover {
+            color: #087f23;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #087f23;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .mobile-menu a {
+            padding: 14px 5%;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+        }
+
+        .mobile-menu a:hover {
+            background: #f5faf5;
+            color: #087f23;
+        }
+
+        .mobile-menu.show {
+            display: flex;
+        }
+
+        /* ================= PAGE INTRO ================= */
+
+        .page-header {
+            background: linear-gradient(
+                rgba(0, 90, 20, 0.85),
+                rgba(0, 90, 20, 0.85)
+            );
+            color: white;
+            padding: 85px 0;
+            text-align: center;
+        }
+
+        .page-header small {
+            color: #ffd700;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin: 10px 0 15px;
+        }
+
+        .page-header h1 span {
+            color: #ffd700;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        /* ================= FACILITY INTRO ================= */
+
+        .intro {
+            padding: 70px 0 30px;
+            text-align: center;
+        }
+
+        .section-label {
+            color: #087f23;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .intro h2 {
+            font-size: 34px;
+            margin: 8px 0 15px;
+        }
+
+        .intro p {
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* ================= FACILITIES ================= */
+
+        .facilities {
+            padding: 40px 0 80px;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .facility-card {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+        }
+
+        /* PICTURE AREA */
+
+        .facility-image {
+            height: 230px;
+            background: #e9f3ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #087f23;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .facility-content {
+            padding: 25px;
+        }
+
+        .facility-content h3 {
+            color: #087f23;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .facility-content p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* ================= FACILITY LIST ================= */
+
+        .facility-features {
+            background: #f7faf7;
+            padding: 70px 0;
+        }
+
+        .facility-features h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e6e6e6;
+        }
+
+        .feature-box h3 {
+            color: #087f23;
+            margin-bottom: 8px;
+        }
+
+        .feature-box p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= SCHOOL ENVIRONMENT ================= */
+
+        .environment {
+            padding: 80px 0;
+        }
+
+        .environment-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .environment-content h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .environment-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #087f23;
+            color: white;
+            padding: 65px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #222;
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #073d13;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d8e8da;
+            font-size: 14px;
+        }
+
+        .footer-col a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #ffd700;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            color: #bcd0bf;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 850px) {
+
+            .desktop-menu {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo-name {
+                font-size: 11px;
+            }
+
+            .logo-motto {
+                font-size: 9px;
+            }
+
+            .logo-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 15px;
+            }
+
+            .page-header {
+                padding: 65px 0;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .page-header p {
+                font-size: 15px;
+            }
+
+            .intro h2,
+            .environment-content h2,
+            .cta h2 {
+                font-size: 27px;
+            }
+
+            .facility-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-mark">
+                DSWS
+            </div>
+
+            <div>
+                <div class="logo-name">
+                    DESMA SPRING WATER SCHOOL
+                </div>
+
+                <span class="logo-motto">
+                    "To Make a Difference"
+                </span>
+            </div>
+
+        </a>
+
+        <nav class="desktop-menu">
+
+            <a href="index.html">Home</a>
+            <a href="explore.html">About</a>
+            <a href="admission.html">Admissions</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact_admi.html">Contact</a>
+
+        </nav>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="index(3).html">Home</a>
+        <a href="explore.html">About</a>
+        <a href="admission.html">Admissions</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact_admissions.html">Contact</a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <small>DESMA SPRING WATER SCHOOL</small>
+
+        <h1>
+            Our <span>Facilities</span>
+        </h1>
+
+        <p>
+            Discover the learning spaces and facilities that
+            support teaching, learning, creativity and the
+            overall development of our students.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our School Environment
+        </div>
+
+        <h2>
+            Spaces Designed for Learning
+        </h2>
+
+        <p>
+            At DESMA SPRING WATER SCHOOL, we believe that a good
+            learning environment plays an important role in helping
+            students learn, grow and develop their abilities.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FACILITY CARDS ================= -->
+
+<section class="facilities">
+
+    <div class="container">
+
+        <div class="facility-grid">
+
+
+            <!-- CLASSROOMS -->
+
+            <div class="facility-card">
+
+                <div class="facility-image">
+                    CLASSROOM PHOTO
+                </div>
+
+                <div class="facility-content">
+
+                    <h3>
+                        Classrooms
+                    </h3>
+
+                    <p>
+                        Our classrooms provide an organized environment
+                        where students can participate in lessons,
+                        discussions, activities and collaborative learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPUTER / ICT -->
+
+            <div class="facility-card">
+
+                <div class="facility-image">
+                    ICT / COMPUTER PHOTO
+                </div>
+
+                <div class="facility-content">
+
+                    <h3>
+                        ICT & Computer Facilities
+                    </h3>
+
+                    <p>
+                        Technology can support students in developing
+                        digital skills, accessing learning resources and
+                        becoming familiar with modern tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LIBRARY -->
+
+            <div class="facility-card">
+
+                <div class="facility-image">
+                    LIBRARY PHOTO
+                </div>
+
+                <div class="facility-content">
+
+                    <h3>
+                        Library & Reading Space
+                    </h3>
+
+                    <p>
+                        A reading environment encourages students to
+                        develop good reading habits, explore information
+                        and build their knowledge beyond the classroom.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCIENCE -->
+
+            <div class="facility-card">
+
+                <div class="facility-image">
+                    SCIENCE FACILITY PHOTO
+                </div>
+
+                <div class="facility-content">
+
+                    <h3>
+                        Science Learning Space
+                    </h3>
+
+                    <p>
+                        Practical learning spaces can help students
+                        understand scientific ideas through observation,
+                        experiments and practical activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLAYGROUND -->
+
+            <div class="facility-card">
+
+                <div class="facility-image">
+                    PLAYGROUND PHOTO
+                </div>
+
+                <div class="facility-content">
+
+                    <h3>
+                        Playground & Recreation
+                    </h3>
+
+                    <p>
+                        Recreation and physical activities provide
+                        opportunities for students to exercise, interact
+                        and develop teamwork.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHOOL HALL -->
+
+            <div class="facility-card">
+
+                <div class="facility-image">
+                    SCHOOL HALL PHOTO
+                </div>
+
+                <div class="facility-content">
+
+                    <h3>
+                        School Hall
+                    </h3>
+
+                    <p>
+                        A school hall can provide space for assemblies,
+                        presentations, meetings, celebrations and
+                        other school activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="facility-features">
+
+    <div class="container">
+
+        <h2>
+            What Our Facilities Support
+        </h2>
+
+        <div class="feature-grid">
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Learning
+                </h3>
+
+                <p>
+                    Spaces that support classroom instruction,
+                    reading, research and practical learning.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    Opportunities for students to express ideas,
+                    develop talents and participate in creative activities.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Technology
+                </h3>
+
+                <p>
+                    Learning environments that can introduce students
+                    to useful digital tools and technology.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Physical Development
+                </h3>
+
+                <p>
+                    Spaces that encourage physical activity,
+                    recreation and healthy development.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Collaboration
+                </h3>
+
+                <p>
+                    Areas where students can work together,
+                    communicate and participate in group activities.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    School Life
+                </h3>
+
+                <p>
+                    Facilities that support assemblies, events,
+                    meetings and other aspects of school life.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ENVIRONMENT ================= -->
+
+<section class="environment">
+
+    <div class="container">
+
+        <div class="environment-content">
+
+            <div class="section-label">
+                Learning Environment
+            </div>
+
+            <h2>
+                A Place to Learn, Grow and Develop
+            </h2>
+
+            <p>
+                A school is more than classrooms. The environment
+                around students can influence how they learn,
+                interact and develop their abilities.
+            </p>
+
+            <p>
+                We aim to provide an environment that supports
+                learning, responsibility, creativity, discipline
+                and positive interaction.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Want to Learn More About Our School?
+        </h2>
+
+        <p>
+            Explore our admissions information or contact the school
+            to find out more.
+        </p>
+
+        <a href="admission.html" class="btn btn-primary">
+            View Admissions
+        </a>
+
+        <a href="contact.html" class="btn btn-secondary">
+            Contact Us
+        </a><br>   <br>
+<br>
+<a href="index(3).html"><strong> ← Back to home</strong>
+            </a>
+
+    </div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>
+                    DESMA SPRING WATER SCHOOL
+                </h3>
+
+                <p>
+                    "To Make a Difference"
+                </p>
+
+                <p style="margin-top:12px;">
+                    Providing an environment where students
+                    can learn, grow and develop.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("show");
+    });
+
+});
+</script>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DESMA SPRING WATER SCHOOL</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* HEADER */
+
+        header {
+            background: white;
+            padding: 15px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 45px;
+            height: 45px;
+            background: #063970;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .logo span {
+            display: block;
+            color: #063970;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .logo small {
+            display: block;
+            color: #0b6e4f;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #063970;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(rgba(6,57,112,0.85),
+                rgba(11,110,79,0.85));
+            
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero .motto {
+            font-size: 21px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 5px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #063970;
+        }
+
+        .btn-secondary {
+            background: #0b6e4f;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #063970;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .card h3 {
+            color: #063970;
+            margin: 15px 0;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #0b6e4f;
+            font-weight: bold;
+        }
+
+        /* ANNOUNCEMENT */
+
+        .announcement {
+            background: #eef5f2;
+        }
+
+        .announcement-box {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #0b6e4f;
+            border-radius: 8px;
+        }
+
+        .announcement-box h3 {
+            color: #063970;
+            margin-bottom: 10px;
+        }
+
+        /* WHY US */
+
+        .why-us {
+            background: white;
+        }
+
+        .why-list {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .why-list div {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #f5f7fa;
+            border-radius: 8px;
+        }
+
+        /* ADMISSION */
+
+        .admission {
+            background: linear-gradient(135deg, #063970, #0b6e4f);
+            color: white;
+            text-align: center;
+        }
+
+        .admission h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: white;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+        }
+
+        .contact-info p {
+            margin: 8px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #062b50;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 12px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+                flex-shrink: 0;
+            }
+
+            .logo span {
+                font-size: 15px;
+            }
+
+            .logo small {
+                font-size: 10px;
+            }
+
+            .logo-mark {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-mark">
+                DS
+            </div>
+
+            <div>
+                <span>DESMA SPRING WATER SCHOOL</span>
+                <small>“To Make a Difference”</small>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore-school.html">About</a>
+            <a href="admission.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn"
+                aria-label="Open menu">☰</button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>DESMA SPRING WATER SCHOOL</h1>
+
+            <div class="motto">
+                “To Make a Difference”
+            </div>
+
+            <p>
+                Nurturing young minds, building character and preparing
+                students for a successful future through quality education.
+            </p>
+
+            <a href="admission.html" class="btn btn-primary">
+                Apply for Admission
+            </a>
+
+            <a href="explore-school.html" class="btn btn-secondary">
+                Explore Our School
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- WELCOME -->
+
+    <section class="about">
+
+        <h2 class="section-title">
+            Welcome to DESMA SPRING WATER SCHOOL
+        </h2>
+
+        <p class="section-intro">
+            We are committed to creating a supportive learning environment
+            where every child can discover their potential, develop confidence
+            and receive the foundation needed for a brighter future.
+        </p>
+
+        <div class="about-content">
+
+            <p>
+                At DESMA SPRING WATER SCHOOL, education goes beyond the
+                classroom. We seek to develop students academically,
+                morally, socially and creatively while encouraging them
+                to become responsible and confident individuals.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCHOOL HIGHLIGHTS -->
+
+    <section>
+
+        <h2 class="section-title">
+            Discover Our School
+        </h2>
+
+        <p class="section-intro">
+            Learn more about the opportunities and experiences available
+            to our students.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div style="font-size:40px;">📚</div>
+
+                <h3>Academic Excellence</h3>
+
+                <p>
+                    We encourage strong academic development through
+                    effective teaching, learning and continuous assessment.
+                </p>
+
+                <a href="learn-more.html">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div style="font-size:40px;">🏫</div>
+
+                <h3>Our School</h3>
+
+                <p>
+                    Discover our learning environment, values, programmes
+                    and activities.
+                </p>
+
+                <a href="learn-more.html">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div style="font-size:40px;">🎓</div>
+
+                <h3>Admissions</h3>
+
+                <p>
+                    Find out how to begin your child's educational journey
+                    with us.
+                </p>
+
+                <a href="admission.html">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANNOUNCEMENT -->
+
+    <section class="announcement">
+
+        <h2 class="section-title">
+            Latest Announcement
+        </h2>
+
+        <div class="announcement-box">
+
+            <h3>📢 Important School Information</h3>
+
+            <p>
+                Stay updated with important information about school
+                activities, academic programmes, resumption and upcoming
+                events.
+            </p>
+
+            <br>
+
+            <a href="learn-more.html" class="btn btn-secondary">
+                Learn More
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="why-us">
+
+        <h2 class="section-title">
+            Why Choose DESMA SPRING WATER SCHOOL?
+        </h2>
+
+        <p class="section-intro">
+            We are dedicated to providing an environment where students
+            can learn, grow and make a difference.
+        </p>
+
+        <div class="why-list">
+
+            <div>
+                📖 <strong>Quality Education</strong> —
+                Focused teaching and meaningful learning experiences.
+            </div>
+
+            <div>
+                👨‍🏫 <strong>Dedicated Teachers</strong> —
+                Teachers committed to helping students succeed.
+            </div>
+
+            <div>
+                🌱 <strong>Character Development</strong> —
+                Encouraging discipline, responsibility and good values.
+            </div>
+
+            <div>
+                💡 <strong>Practical Learning</strong> —
+                Helping students develop creativity and problem-solving skills.
+            </div>
+
+            <div>
+                🤝 <strong>Supportive Environment</strong> —
+                A learning environment where students are encouraged to grow.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMISSION -->
+
+    <section class="admission">
+
+        <h2>
+            Give Your Child a Strong Start
+        </h2>
+
+        <p>
+            Interested in joining DESMA SPRING WATER SCHOOL?
+            Take the next step today.
+        </p>
+
+        <br>
+
+        <a href="admission.html" class="btn btn-primary">
+            Apply for Admission
+        </a>
+
+        <a href="contact.html" class="btn btn-primary">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact">
+
+        <h2 class="section-title">
+            Contact Us
+        </h2>
+
+        <p class="section-intro">
+            Have questions about our school, admissions or programmes?
+            Our office will be happy to provide more information.
+        </p>
+
+        <div class="contact-info">
+
+            <p>📞 <strong>Phone:</strong> Your phone number</p>
+
+            <p>📧 <strong>Email:</strong> Your school email</p>
+
+            <p>📍 <strong>Address:</strong> Your school address</p>
+
+        </div>
+
+        <br>
+
+        <a href="contact.html" class="btn btn-secondary">
+            Contact the School
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            <strong>DESMA SPRING WATER SCHOOL</strong>
+        </p>
+
+        <p>
+            “To Make a Difference”
+        </p>
+
+        <br>
+
+        <p>
+            &copy; 2026 DESMA SPRING WATER SCHOOL.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>News & Announcements | DESMA SPRING WATER SCHOOL</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: #087f23;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .logo-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #087f23;
+        }
+
+        .logo-motto {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .desktop-menu {
+            display: flex;
+            gap: 22px;
+        }
+
+        .desktop-menu a {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .desktop-menu a:hover {
+            color: #087f23;
+        }
+
+        /* ================= PAGE HEADER ================= */
+
+        .page-header {
+            background: linear-gradient(
+                rgba(0, 90, 20, 0.88),
+                rgba(0, 90, 20, 0.88)
+            );
+            color: white;
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .page-header small {
+            color: #ffd700;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin: 10px 0 15px;
+        }
+
+        .page-header h1 span {
+            color: #ffd700;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* ================= NEWS INTRO ================= */
+
+        .news-intro {
+            padding: 70px 0 35px;
+            text-align: center;
+        }
+
+        .section-label {
+            color: #087f23;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .news-intro h2 {
+            font-size: 34px;
+            margin: 8px 0 15px;
+        }
+
+        .news-intro p {
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* ================= NEWS CARDS ================= */
+
+        .news-section {
+            padding: 35px 0 80px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+        }
+
+        /* PICTURE AREA */
+
+        .news-image {
+            height: 190px;
+            background: #e9f3ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #087f23;
+            font-weight: bold;
+        }
+
+        .news-content {
+            padding: 23px;
+        }
+
+        .news-date {
+            display: inline-block;
+            color: #087f23;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .news-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .news-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            background: #fff4b8;
+            color: #765d00;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* ================= UPCOMING UPDATES ================= */
+
+        .updates {
+            background: #f7faf7;
+            padding: 70px 0;
+        }
+
+        .updates h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .update-box {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-left: 5px solid #087f23;
+            padding: 23px;
+            border-radius: 8px;
+        }
+
+        .update-box h3 {
+            color: #087f23;
+            margin-bottom: 8px;
+        }
+
+        .update-box p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= NOTICE ================= */
+
+        .notice {
+            padding: 70px 0;
+        }
+
+        .notice-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            padding: 45px 30px;
+            border-radius: 12px;
+            background: #087f23;
+            color: white;
+        }
+
+        .notice-box h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .notice-box p {
+            max-width: 650px;
+            margin: auto;
+            opacity: 0.95;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #073d13;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #d8e8da;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #222;
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #032d0c;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d8e8da;
+            font-size: 14px;
+        }
+
+        .footer-col a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #ffd700;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            color: #bcd0bf;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 850px) {
+
+            .desktop-menu {
+                display: none;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .updates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo-name {
+                font-size: 11px;
+            }
+
+            .logo-motto {
+                font-size: 9px;
+            }
+
+            .logo-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 65px 0;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .news-intro h2,
+            .notice-box h2,
+            .cta h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="index(3).html" class="logo">
+
+            <div class="logo-mark">
+                DSWS
+            </div>
+
+            <div>
+
+                <div class="logo-name">
+                    DESMA SPRING WATER SCHOOL
+                </div>
+
+                <span class="logo-motto">
+                    "To Make a Difference"
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="desktop-menu">
+
+            <a href="index(3).html">Home</a>
+            <a href="explore.html">About</a>
+            <a href="admission.html">Admissions</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact_admissions.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <small>
+            DESMA SPRING WATER SCHOOL
+        </small>
+
+        <h1>
+            News & <span>Announcements</span>
+        </h1>
+
+        <p>
+            Stay informed about school activities, important
+            announcements, events and other updates from
+            DESMA SPRING WATER SCHOOL.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="news-intro">
+
+    <div class="container">
+
+        <div class="section-label">
+            School Updates
+        </div>
+
+        <h2>
+            What's Happening at DSWS?
+        </h2>
+
+        <p>
+            This page will provide parents, students and visitors
+            with important information about school activities,
+            announcements and upcoming events.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWS ================= -->
+
+<section class="news-section">
+
+    <div class="container">
+
+        <div class="news-grid">
+
+
+            <!-- NEWS 1 -->
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    NEWS PHOTO
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        SCHOOL ANNOUNCEMENT
+                    </span>
+
+                    <h3>
+                        Important School Announcements
+                    </h3>
+
+                    <p>
+                        Important information for parents,
+                        students and members of the school
+                        community will be published here.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- NEWS 2 -->
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    SCHOOL EVENT PHOTO
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        SCHOOL EVENTS
+                    </span>
+
+                    <h3>
+                        School Events & Activities
+                    </h3>
+
+                    <p>
+                        Updates about school programmes,
+                        celebrations, competitions and other
+                        activities will appear here.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- NEWS 3 -->
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    ACADEMIC PHOTO
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        ACADEMIC UPDATE
+                    </span>
+
+                    <h3>
+                        Academic & Learning Updates
+                    </h3>
+
+                    <p>
+                        Relevant academic information,
+                        learning activities and school updates
+                        will be shared here.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- NEWS 4 -->
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    ADMISSION PHOTO
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        ADMISSIONS
+                    </span>
+
+                    <h3>
+                        Admission Announcements
+                    </h3>
+
+                    <p>
+                        Information concerning admission periods,
+                        application updates and important admission
+                        notices will be published here.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- NEWS 5 -->
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    PARENT PHOTO
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        PARENT INFORMATION
+                    </span>
+
+                    <h3>
+                        Parents' Information
+                    </h3>
+
+                    <p>
+                        Notices and information that may be useful
+                        to parents and guardians will be made available
+                        through this section.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- NEWS 6 -->
+
+            <article class="news-card">
+
+                <div class="news-image">
+                    GENERAL NEWS PHOTO
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        GENERAL NEWS
+                    </span>
+
+                    <h3>
+                        Latest School News
+                    </h3>
+
+                    <p>
+                        New developments, achievements and other
+                        important school news will be added here
+                        as they become available.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= UPCOMING UPDATES ================= -->
+
+<section class="updates">
+
+    <div class="container">
+
+        <h2>
+            Updates You Can Expect
+        </h2>
+
+        <div class="updates-grid">
+
+
+            <div class="update-box">
+
+                <h3>
+                    School Calendar
+                </h3>
+
+                <p>
+                    Important dates, term activities, school
+                    events and other calendar information.
+                </p>
+
+            </div>
+
+
+            <div class="update-box">
+
+                <h3>
+                    School Activities
+                </h3>
+
+                <p>
+                    Information about programmes, celebrations,
+                    competitions and special activities.
+                </p>
+
+            </div>
+
+
+            <div class="update-box">
+
+                <h3>
+                    Important Notices
+                </h3>
+
+                <p>
+                    Important announcements and notices for
+                    students, parents and guardians.
+                </p>
+
+            </div>
+
+
+            <div class="update-box">
+
+                <h3>
+                    School Achievements
+                </h3>
+
+                <p>
+                    Highlights of student achievements and
+                    important school accomplishments.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMING SOON NOTICE ================= -->
+
+<section class="notice">
+
+    <div class="container">
+
+        <div class="notice-box">
+
+            <h2>
+                More Updates Coming Soon
+            </h2>
+
+            <p>
+                This section will be updated regularly with
+                important school news, announcements, events
+                and other information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Need More Information?
+        </h2>
+
+        <p>
+            If you have questions about the school, admissions
+            or any other information, please contact us.
+        </p>
+
+        <a href="admission.html" class="btn btn-primary">
+            View Admissions
+        </a>
+
+        <a href="contact.html" class="btn btn-secondary">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-col">
+
+                <h3>
+                    DESMA SPRING WATER SCHOOL
+                </h3>
+
+                <p>
+                    "To Make a Difference"
+                </p>
+
+                <p style="margin-top:12px;">
+                    Providing an environment where students
+                    can learn, grow and develop.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index(3).html">Home</a>
+                <a href="explore.html">About</a>
+                <a href="admission.html">Admissions</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="news.html">News</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Ezeji str., Ogbose road,
+                    Obeama-asa, Oyigbo L.G.A,
+                    Rivers State, Nigeria
+                </p>
+
+                <p style="margin-top:10px;">
+                    +234 708 202 2634
+                </p>
+
+           

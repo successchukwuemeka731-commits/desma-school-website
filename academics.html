@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore the academic programmes, curriculum, teaching approach and academic support at DESMA SPRING WATER SCHOOL.">
+
+    <title>Academics | DESMA SPRING WATER SCHOOL</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #14221d;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* ================= HEADER ================= */
+
+        .header {
+            position: relative;
+            z-index: 1000;
+            background: #fff;
+            box-shadow: 0 2px 18px #00000012;
+        }
+
+        .nav-wrap {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-mark {
+            width: 45px;
+            height: 45px;
+            background: #0b6e4f;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            color: #b38b35;
+        }
+
+        .logo small {
+            display: block;
+            margin-top: 3px;
+            font-size: 13px;
+            font-style: italic;
+            color: #0b6e4f;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .desktop-nav a {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .desktop-nav a:hover {
+            color: #b38b35;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            color: #063970;
+            font-size: 30px;
+            cursor: pointer;
+            width: 45px;
+            height: 45px;
+        }
+
+        /* ================= MOBILE MENU ================= */
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 4%;
+            width: 230px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 9999;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 14px;
+            color: #063970;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            background: #f1f5f8;
+        }
+
+        /* ================= PAGE HERO ================= */
+
+        .page-hero {
+            background: linear-gradient(115deg, #123b29, #245a3e 55%, #a77f32);
+            color: white;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .page-hero .eyebrow {
+            color: #d8bd79;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(40px, 6vw, 68px);
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 span {
+            color: #d8bd79;
+        }
+
+        .page-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #edf4ef;
+            font-size: 17px;
+        }
+
+        /* ================= GENERAL ================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section.alt {
+            background: #f6f7f4;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading h2 span {
+            color: #b38b35;
+        }
+
+        .section-heading p {
+            color: #5f6b65;
+        }
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .intro-text h2 span {
+            color: #b38b35;
+        }
+
+        .intro-text p {
+            color: #5f6b65;
+            margin-bottom: 15px;
+        }
+
+        .academic-box {
+            background: linear-gradient(145deg, #173d2b, #245a3e);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px #173d2b20;
+        }
+
+        .academic-box h3 {
+            color: #d8bd79;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .academic-box p {
+            color: #d7e2dc;
+        }
+
+        /* ================= LEVELS ================= */
+
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .level-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px #173d2b0d;
+            border-top: 4px solid #b38b35;
+        }
+
+        .level-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            background: #edf2ed;
+            color: #0b6e4f;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .level-card h3 {
+            color: #173d2b;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .level-card p {
+            color: #5f6b65;
+            font-size: 14px;
+        }
+
+        /* ================= SUBJECTS ================= */
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .subject {
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #b38b35;
+            box-shadow: 0 5px 20px #00000008;
+            font-weight: 600;
+        }
+
+        .subject span {
+            color: #0b6e4f;
+        }
+
+        /* ================= TEACHING ================= */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .approach-card {
+            padding: 30px;
+            background: #f6f7f4;
+            border-radius: 12px;
+        }
+
+        .approach-card h3 {
+            margin-bottom: 10px;
+            color: #173d2b;
+        }
+
+        .approach-card p {
+            font-size: 14px;
+            color: #5f6b65;
+        }
+
+        /* ================= SUPPORT ================= */
+
+        .support-list {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            gap: 15px;
+        }
+
+        .support-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px #00000008;
+        }
+
+        .check {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 50%;
+            background: #0b6e4f;
+            color: white;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+        }
+
+        .support-item h3 {
+            margin-bottom: 3px;
+        }
+
+        .support-item p {
+            color: #5f6b65;
+            font-size: 14px;
+        }
+
+        /* ================= ACTIVITIES ================= */
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .activity {
+            background: #173d2b;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .activity h3 {
+            color: #d8bd79;
+            margin-bottom: 8px;
+        }
+
+        .activity p {
+            color: #d7e2dc;
+            font-size: 14px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #173d2b;
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .cta h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #d7e2dc;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .primary {
+            background: #b38b35;
+            color: white;
+        }
+
+        .light {
+            background: white;
+            color: #173d2b;
+        }
+
+        .primary:hover {
+            background: #98742c;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0d281c;
+            color: #d7e2dc;
+            padding: 50px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 35px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .footer-grid h4 {
+            color: #d8bd79;
+            margin-bottom: 10px;
+        }
+
+        .footer-grid a,
+        .footer-grid p {
+            display: block;
+            font-size: 13px;
+            margin: 5px 0;
+        }
+
+        .footer-grid a:hover {
+            color: #d8bd79;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #ffffff12;
+            padding: 15px;
+            font-size: 12px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .nav-wrap {
+                min-height: 70px;
+                padding: 10px 0;
+            }
+
+            .logo {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .logo span {
+                font-size: 15px;
+            }
+
+            .logo small {
+                font-size: 10px;
+            }
+
+            .logo-mark {
+                width: 38px;
+                height: 38px;
+                font-size: 15px;
+            }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                margin-left: 10px;
+            }
+
+            .intro,
+            .level-grid,
+            .subjects,
+            .approach-grid,
+            .activity-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-heading h2,
+            .intro-text h2,
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .page-hero {
+                padding: 70px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container nav-wrap">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-mark">DSS</div>
+
+                <div>
+                    <span>DESMA SPRING WATER SCHOOL</span>
+                    <small>"To Make a Difference"</small>
+                </div>
+
+            </a>
+
+            <nav class="desktop-nav">
+
+                <a href="index.html">Home</a>
+                <a href="explore.html">About</a>
+                <a href="academics.html">Academics</a>
+                <a href="admission.html">Admissions</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="news.html">News</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="index.html">Home</a>
+            <a href="explore.html">About</a>
+            <a href="academics.html">Academics</a>
+            <a href="admission.html">Admissions</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                LEARNING • KNOWLEDGE • EXCELLENCE
+            </div>
+
+            <h1>
+                Academic <span>Excellence</span>
+            </h1>
+
+            <p>
+                At DESMA SPRING WATER SCHOOL, we provide a supportive
+                learning environment where every student is encouraged
+                to discover their potential, develop strong academic
+                foundations and prepare for the future.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="section">
+
+        <div class="container intro">
+
+            <div class="intro-text">
+
+                <div class="eyebrow" style="color:#9b772e;">
+                    OUR ACADEMIC PHILOSOPHY
+                </div>
+
+                <h2>
+                    Learning Beyond the <span>Classroom</span>
+                </h2>
+
+                <p>
+                    Education at DESMA SPRING WATER SCHOOL goes beyond
+                    memorising facts. We encourage students to understand,
+                    ask questions, solve problems and apply what they learn
+                    in real-life situations.
+                </p>
+
+                <p>
+                    Our academic programme is designed to develop
+                    knowledgeable, confident, creative and responsible
+                    learners who can make a positive difference in society.
+                </p>
+
+            </div>
+
+            <div class="academic-box">
+
+                <h3>Our Academic Goal</h3>
+
+                <p>
+                    To provide quality education that builds strong
+                    academic foundations while developing character,
+                    creativity, critical thinking and lifelong learning
+                    skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LEARNING LEVELS ================= -->
+
+    <section class="section alt">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Our Learning <span>Levels</span>
+                </h2>
+
+                <p>
+                    Our learning programmes are designed to meet students
+                    at their different stages of educational development.
+                </p>
+
+            </div>
+
+
+            <div class="level-grid">
+
+                <div class="level-card">
+
+                    <div class="level-icon">01</div>
+
+                    <h3>Early Years</h3>
+
+                    <p>
+                        We provide a nurturing foundation where young
+                        learners develop communication, numeracy,
+                        creativity, social skills and a love for learning.
+                    </p>
+
+                </div>
+
+
+                <div class="level-card">
+
+                    <div class="level-icon">02</div>
+
+                    <h3>Primary School</h3>
+
+                    <p>
+                        Students build strong foundations in literacy,
+                        numeracy, science, creativity, technology and
+                        other important areas of learning.
+                    </p>
+
+                </div>
+
+
+                <div class="level-card">
+
+                    <div class="level-icon">03</div>
+
+                    <h3>Secondary School</h3>
+
+                    <p>
+                        Students are prepared for higher education and
+                        future careers through deeper subject knowledge,
+                        practical learning and examination preparation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SUBJECTS ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Curriculum & <span>Subjects</span>
+                </h2>
+
+                <p>
+                    Our academic programme covers important areas that
+                    support both intellectual and personal development.
+                </p>
+
+            </div>
+
+
+            <div class="subjects">
+
+                <div class="subject">
+                    <span>01.</span> Mathematics
+                </div>
+
+                <div class="subject">
+                    <span>02.</span> English Language
+                </div>
+
+                <div class="subject">
+                    <span>03.</span> Basic Science
+                </div>
+
+                <div class="subject">
+                    <span>04.</span> Social Studies
+                </div>
+
+                <div class="subject">
+                    <span>05.</span> Computer / ICT
+                </div>
+
+                <div class="subject">
+                    <span>06.</span> Civic Education
+                </div>
+
+                <div class="subject">
+                    <span>07.</span> Agricultural Science
+                </div>
+
+                <div class="subject">
+                    <span>08.</span> Cultural & Creative Arts
+                </div>
+
+                <div class="subject">
+                    <span>09.</span> Christian Religious Studies
+                </div>
+
+                <div class="subject">
+                    <span>10.</span> Physical & Health Education
+                </div>
+
+                <div class="subject">
+                    <span>11.</span> Social & Life Skills
+                </div>
+
+                <div class="subject">
+                    <span>12.</span> Other Level-Appropriate Subjects
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TEACHING APPROACH ================= -->
+
+    <section class="section alt">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+  

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply for Admission</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .admission-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #123c69;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #123c69;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #123c69;
+            padding-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #123c69;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #123c69;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #0b2c4d;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #123c69;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .note {
+            background: #eef5fc;
+            border-left: 4px solid #123c69;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+            .admission-box {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎓 Apply for Admission</h1>
+        <p>Begin your child's journey with us</p>
+    </header>
+
+    <main class="container">
+
+        <div class="admission-box">
+
+            <div class="icon">🎓</div>
+
+            <h2>Admission Application Form</h2>
+
+            <p class="intro">
+                We are pleased that you are interested in joining our school.
+                Please complete the form below and provide the necessary information.
+            </p>
+
+
+            <!-- STUDENT INFORMATION -->
+
+            <h3 class="section-title">Student Information</h3>
+
+            <form
+                action="https://formsubmit.co/successchukwuemeka731@gmail.com"
+                method="POST"
+            >
+
+                <input type="hidden"
+                    name="_subject"
+                    value="New School Admission Application">
+
+                <input type="hidden"
+                    name="_captcha"
+                    value="false">
+
+                <input type="hidden"
+                    name="_template"
+                    value="table">
+
+
+                <label for="studentName">
+                    Student's Full Name *
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    name="Student Full Name"
+                    placeholder="Enter student's full name"
+                    required
+                >
+
+
+                <label for="dob">
+                    Date of Birth *
+                </label>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="Date of Birth"
+                    required
+                >
+
+
+                <label for="gender">
+                    Gender *
+                </label>
+
+                <select
+                    id="gender"
+                    name="Gender"
+                    required
+                >
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+
+                <label for="class">
+                    Class Applying For *
+                </label>
+
+                <select
+                    id="class"
+                    name="Class Applying For"
+                    required
+                >
+                    <option value="">Select class</option>
+                    <option>Creche</option>
+                    <option>Nursery 1</option>
+                    <option>Nursery 2</option>
+                    <option>Nursery 3</option>
+                    <option>Primary 1</option>
+                    <option>Primary 2</option>
+                    <option>Primary 3</option>
+                    <option>Primary 4</option>
+                    <option>Primary 5</option>
+                    <option>Primary 6</option>
+                    <option>JSS 1</option>
+                    <option>JSS 2</option>
+                    <option>JSS 3</option>
+                    <option>SS 1</option>
+                    <option>SS 2</option>
+                    <option>SS 3</option>
+                </select>
+
+
+                <!-- PARENT INFORMATION -->
+
+                <h3 class="section-title">
+                    Parent / Guardian Information
+                </h3>
+
+
+                <label for="parentName">
+                    Parent / Guardian Full Name *
+                </label>
+
+                <input
+                    type="text"
+                    id="parentName"
+                    name="Parent Guardian Name"
+                    placeholder="Enter full name"
+                    required
+                >
+
+
+                <label for="phone">
+                    Phone Number *
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="Phone Number"
+                    placeholder="Enter phone number"
+                    required
+                >
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="Email Address"
+                    placeholder="Enter email address"
+                >
+
+
+                <label for="address">
+                    Home Address
+                </label>
+
+                <textarea
+                    id="address"
+                    name="Home Address"
+                    placeholder="Enter home address"
+                ></textarea>
+
+
+                <!-- ADDITIONAL INFORMATION -->
+
+                <h3 class="section-title">
+                    Additional Information
+                </h3>
+
+
+                <label for="previousSchool">
+                    Previous School
+                </label>
+
+                <input
+                    type="text"
+                    id="previousSchool"
+                    name="Previous School"
+                    placeholder="Enter previous school"
+                >
+
+
+                <label for="message">
+                    Additional Information
+                </label>
+
+                <textarea
+                    id="message"
+                    name="Additional Information"
+                    placeholder="Anything else you would like the school to know?"
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    🎓 Submit Application
+                </button>
+
+            </form>
+
+
+            <div class="note">
+                📌 Please ensure that the information provided is accurate.
+                After submitting the application, the school will review your
+                information and contact you using the phone number or email provided.
+            </div>
+
+
+            <a href="index(3).html" class="back">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Your School. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
